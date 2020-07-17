@@ -1,0 +1,124 @@
+body {
+    background-color: #181818;
+}
+
+.ondemand {
+    /* background-color: #d22d2d !important;
+    background: -webkit-linear-gradient(to right, #8e1313, #d22d2d) !important;
+    background: linear-gradient(to right, #8e1313, #d22d2d) !important; */
+    background-image: url(https://res.cloudinary.com/sarjanamalam/image/upload/v1587365189/movith/example/background-demands_yynmja.jpg);
+
+}
+
+.ondemand #time {
+    font-size: 1.9rem !important;
+}
+
+.section-dark {
+    background-color: #181818 !important;
+}
+
+.section-dark h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Lato', sans-serif !important;
+    color: #fff;
+}
+
+.dark #footer .widget .widget-title,
+.dark #footer .widget h4,
+#footer.inverted .widget .widget-title,
+#footer.inverted .widget h4,
+#footer.dark .widget .widget-title,
+#footer.dark .widget h4 {
+    color: #a4a4a6 !important;
+    font-weight: 900 !important;
+}
+
+.section-dark h1 {
+    font-weight: 900 !important;
+    margin-bottom: 0;
+}
+
+.section-dark img {
+    width: 500px;
+    height: auto;
+}
+
+.input-group .advertisefc {
+    height: 30px !important;
+}
+
+.footer-content img {
+    width: 200px !important;
+}
+
+.iphone-sec2 {
+    width: 550px !important;
+}
+
+.section-dark .ac-item {
+    background-color: #2e2e2e !important;
+}
+
+.section-dark .ac-title {
+    font-size: 2rem !important;
+}
+
+.background-white h3 {
+    color: #121212;
+    font-weight: 900;
+}
+
+.ondemand section {
+    background-color: transparent !important;
+    padding-top: 40px !important;
+}
+
+.apps .col-lg-3 {
+    padding-right: 0;
+}
+
+.apps p {
+    color: #fff;
+}
+
+.apps .col-part {
+    border-radius: 5px;
+    padding: 30px;
+    background: #141414;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #2f2f2f, #141414);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #2f2f2f, #141414);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.apps .weather-img {
+    width: 70px;
+}
+
+.apps h4 {
+    margin-bottom: 0;
+}
+
+.apps .embed-responsive-16by9 {
+    padding-top: 0;
+}
+
+.apps .boxoffice .filmposter {
+    margin-top: 1.5rem;
+    height: auto;
+    width: 350px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px !important;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px !important;
+}
+
+.img-congrats {
+    width: 200px !important
+}
