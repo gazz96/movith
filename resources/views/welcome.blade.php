@@ -18,6 +18,7 @@
 </head>
 
 <body>
+
     <div class="body-inner">
         <header id="header" data-fullwidth="true" class="header-mini dark header-always-fixed">
             <div class="header-inner">
@@ -45,7 +46,6 @@
                     <div class="header-extras">
                         <ul>
 
-                            <?php dd( session()->get('isLogin') ); ?>
                             <li>
                                 <a class="btn btn-danger" href="sign-in"><i class="icon-user"></i></a>
                             </li>
