@@ -12,6 +12,8 @@
 */
 // -_- -_- -_- -_- -_- -_-
 // Susah juga yeee
+// bisa ga?
+
 
 use Illuminate\Support\Facades\Hash;
 
