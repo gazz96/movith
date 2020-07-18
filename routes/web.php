@@ -10,11 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-// -_- -_- -_- -_- -_- -_-
-// Susah juga yeee
-// bisa ga?
-// another comments
-// another another comments
+
 
 use Illuminate\Support\Facades\Hash;
 
@@ -55,8 +51,8 @@ Route::get('sign-in', 'LoginController@signin')->name('signin');
 Route::get('sign-up', 'LoginController@signup');
 
 // menuju administrator dash
-Route::post('/administrator/{tokens}', 'AuthController@validateadministrator');
-Route::get('administrator', 'LoginController@administrator');
+Route::post('/administrator/{tokens}','AuthController@validateadministrator');
+Route::get('administrator','LoginController@administrator');
 
 // Auth Manual Controller
 Route::post('/create-account/{tokens}', 'LoginController@create_account');
@@ -71,8 +67,10 @@ Route::group(['middleware' => ['islogin']], function () {
 
 
     Route::get('/demands', 'DemandsController@index');
+
+
 });
-Route::group(['middleware' => ['isadmin']], function () {
+Route::group(['middleware'=>['isadmin']],function(){
     Route::get('dash', function () {
         return view('dashboard.content.index');
     });
