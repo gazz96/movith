@@ -52,8 +52,8 @@ Route::get('sign-in', 'LoginController@signin')->name('signin');
 Route::get('sign-up', 'LoginController@signup');
 
 // menuju administrator dash
-Route::post('/administrator/{tokens}','AuthController@validateadministrator');
-Route::get('administrator','LoginController@administrator');
+Route::post('/administrator/{tokens}', 'AuthController@validateadministrator');
+Route::get('administrator', 'LoginController@administrator');
 
 // Auth Manual Controller
 Route::post('/create-account/{tokens}', 'LoginController@create_account');
@@ -65,13 +65,10 @@ Route::post('/get-verification/{tokens}', 'AuthController@validateLogin');
 // On Demands
 
 Route::group(['middleware' => ['islogin']], function () {
-
-
     Route::get('/demands', 'DemandsController@index');
-
-
 });
-Route::group(['middleware'=>['isadmin']],function(){
+
+Route::group(['middleware' => ['isadmin']], function () {
     Route::get('dash', function () {
         return view('dashboard.content.index');
     });
