@@ -10,8 +10,7 @@
                     <h4><img class="weather-img"
                             src="https://res.cloudinary.com/sarjanamalam/image/upload/v1587367217/movith/rain_thunder_zwvoo7.svg"
                             alt="Weather"></h4>
-                    <h4> | 30<sup>o</sup>C</h4>
-                    {{-- <p>{{$data->latitude}}, {{$data->longitude}}</p> --}}
+                    <h4> Medan | 30<sup>o</sup>C</h4>
                 </div>
             </div>
             <div class="col-lg-9">
@@ -53,7 +52,7 @@
                 </div>
             </div>
         </div>
-        <div class="row">
+        {{-- <div class="row">
             <div class="col-lg-12 m-t-30">
                 <div class="boxoffice">
                     <h4>Box Offices</h4>
@@ -149,7 +148,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
 </section>
 
 <script>

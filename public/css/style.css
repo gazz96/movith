@@ -1419,8 +1419,8 @@ Topbar
     position: relative;
     width: 100%;
     z-index: 199 !important;
-    height: 80px;
-    line-height: 80px;
+    height: 60px;
+    line-height: 60px;
 }
 
 #header .container {
