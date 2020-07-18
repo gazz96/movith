@@ -45,23 +45,16 @@
 
                     <div class="header-extras">
                         <ul>
-
                             <li>
-                                <a class="btn btn-danger" href="sign-in"><i class="icon-user"></i></a>
-                            </li>
-                            {{-- <li>
                                 <div class="p-dropdown">
-                                    <a href="#"><i class="icon-globe"></i><span>EN</span></a>
+                                    <a class="btn btn-danger" href="sign-in"><i class="icon-user"></i> </a>
                                     <ul class="p-dropdown-content">
-                                        <li><a href="#">French</a></li>
-                                        <li><a href="#">Spanish</a></li>
-                                        <li><a href="#">English</a></li>
+                                        <li><a href="#">Setting</a></li>
+                                        <li><a href="#">Demands</a></li>
+                                        <li><a href="#">Logout</a></li>
                                     </ul>
                                 </div>
                             </li>
-                            <li>
-                                <a href="#"><i class="icon-user"></i></a>
-                            </li> --}}
                         </ul>
                     </div>
 
