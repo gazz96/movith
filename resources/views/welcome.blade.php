@@ -44,8 +44,10 @@
 
                     <div class="header-extras">
                         <ul>
+
+                            <?php dd( session()->get('isLogin') ); ?>
                             <li>
-                                <a class="btn btn-danger" href="sign-in"><i class="icon-user"></i> SIGN IN</a>
+                                <a class="btn btn-danger" href="sign-in"><i class="icon-user"></i></a>
                             </li>
                             {{-- <li>
                                 <div class="p-dropdown">
