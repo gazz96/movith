@@ -13,7 +13,7 @@
 // -_- -_- -_- -_- -_- -_-
 // Susah juga yeee
 // bisa ga?
-
+// another comments
 
 use Illuminate\Support\Facades\Hash;
 
