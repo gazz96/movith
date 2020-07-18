@@ -16,7 +16,8 @@
     <link rel="icon" type="image/png" sizes="96x96" href="dashboard/assets/img/favicon.png" />
 
     <!-- Tambahan -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tail.select@0.5.15/css/bootstrap4/tail.select-default.css">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/tail.select@0.5.15/css/bootstrap4/tail.select-default.css">
 
     {{-- Datatables --}}
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">

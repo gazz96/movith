@@ -47,7 +47,7 @@ Route::get('investor-relations', function () {
     return view('homepage.investor');
 });
 
-Route::get('logout', function() {
+Route::get('logout', function () {
     session()->flush();
     return redirect('/');
 });

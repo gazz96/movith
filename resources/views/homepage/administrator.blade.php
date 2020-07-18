@@ -44,8 +44,6 @@
                             <button type="submit" class="btn">Login</button>
                         </div>
                     </form>
-                    <p class="small">Don't have an account yet? <a href="sign-up">Register New Account</a>
-                    </p>
                 </div>
             </div>
         </div>
