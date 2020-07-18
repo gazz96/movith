@@ -12,7 +12,6 @@
 */
 // tes
 
-
 use Illuminate\Support\Facades\Hash;
 
 Route::get('/', function () {
