@@ -55,7 +55,6 @@ class ContentController extends Controller
         $client->namausaha = $request->namausaha;
         $client->username = $request->username;
         $client->updated_by = auth()->user()->name;
-
         $client->save();
         return back()->with('selesai', 'Update data client berhasil diubah.');
     }
@@ -92,10 +91,9 @@ class ContentController extends Controller
         $places->updated_by = auth()->user()->name;
         $places->created_by = auth()->user()->name;
         $places->save();
-
         $lastInsertId = $places->id;
 
-        foreach($request->input('id_ads') as $id_ads) {
+        foreach ($request->input('id_ads') as $id_ads) {
             DB::table('places_video')
                 ->insert([
                     'id_place' => $lastInsertId,
@@ -115,14 +113,14 @@ class ContentController extends Controller
         $places->nohp = $request->nohp;
         $places->spesifikasitv = $request->spesifikasi;
         $places->smarttv = $request->smarttv;
-        $places->updated_by = auth()->user()->name;
+        $places->updated_by = session()->get('name');
         $places->save();
 
         DB::table('places_video')
             ->where('id_place', $id)
             ->delete();
 
-        foreach($request->input('id_ads') as $id_ads) {
+        foreach ($request->input('id_ads') as $id_ads) {
             DB::table('places_video')
                 ->insert([
                     'id_place' => $id,

@@ -48,7 +48,8 @@
                             <?php if(session()->get('isLogin') == 'login') : ?>
                             <li>
                                 <div class="p-dropdown">
-                                    <a class="btn btn-danger" href="javascript:void(0)"><i class="icon-user"></i> <?php echo session()->get('nama'); ?></a>
+                                    <a class="btn btn-danger" href="javascript:void(0)"><i class="icon-user"></i>
+                                        <?php echo session()->get('nama'); ?></a>
                                     <ul class="p-dropdown-content">
                                         <li><a href="#">Setting</a></li>
                                         <li><a href="demands">Demands</a></li>
