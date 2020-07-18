@@ -46,6 +46,12 @@ Route::get('partners', function () {
 Route::get('investor-relations', function () {
     return view('homepage.investor');
 });
+
+Route::get('logout', function() {
+    session()->flush();
+    return redirect('/');
+});
+
 // Halaman Authorizations
 // halaman menuju demands
 Route::get('sign-in', 'LoginController@signin')->name('signin');
