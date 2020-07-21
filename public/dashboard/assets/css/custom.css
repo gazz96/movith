@@ -22,3 +22,13 @@
 .viewadsimg {
     max-width: 200px;
 }
+
+.inform h4 {
+    color: #fff;
+    font-weight: 600;
+}
+
+.card-body h4 {
+    color: #fff;
+    font-weight: 600;
+}

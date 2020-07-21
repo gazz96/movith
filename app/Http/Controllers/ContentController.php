@@ -110,6 +110,9 @@ class ContentController extends Controller
         $places->nama_toko = $request->nama_toko;
         $places->alamat_toko = $request->alamat_toko;
         $places->email = $request->email;
+        $places->username = $request->username;
+        $places->password = Hash::make($request->password);
+        $places->unpassword = $request->password;
         $places->nohp = $request->nohp;
         $places->spesifikasitv = $request->spesifikasi;
         $places->smarttv = $request->smarttv;
