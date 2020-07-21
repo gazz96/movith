@@ -76,7 +76,7 @@
                                         </li>
                                     </ul>
                                     <ul>
-                                        <li class="dropdown"> <a href="#">{{session()->get('nama')}}<span
+                                        <li class="dropdown"> <a href="#">{{session()->get('nama_toko')}}<span
                                                     class="menu-sub-title"><span style="color:#17ba91;"><i
                                                             class="fas fa-circle"></i></span>
                                                     Online</span></a>
