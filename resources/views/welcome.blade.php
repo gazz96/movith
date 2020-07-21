@@ -12,9 +12,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <title>Movith - @yield('title')</title>
-    <link href="css/plugins.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/custom.css" rel="stylesheet">
+    <link href="{!!asset('css/plugins.css')!!}" rel="stylesheet">
+    <link href="{!!asset('css/style.css')!!}" rel="stylesheet">
+    <link href="{!!asset('css/custom.css')!!}" rel="stylesheet">
+    <meta name="csrf_token" content="{{csrf_token()}}">
 </head>
 
 <body>
@@ -172,10 +173,9 @@
             </div>
         </div>
     </footer>
-    <script src="js/jquery.js"></script>
-    <script src="js/plugins.js"></script>
-
-    <script src="js/functions.js"></script>
+    <script src="{!!asset('js/jquery.js')!!}"></script>
+    <script src="{!!asset('js/plugins.js')!!}"></script>
+    <script src="{!!asset('js/functions.js')!!}"></script>
 </body>
 
 </html>

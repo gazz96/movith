@@ -51,7 +51,9 @@ Route::get('logout', function () {
     session()->flush();
     return redirect('/');
 });
-
+Route::get('/berhasil', function () {
+    return view('homepage.berhasil');
+})->name('congrats');
 // Halaman Authorizations
 // halaman menuju demands
 Route::get('sign-in', 'LoginController@signin')->name('signin');
@@ -62,7 +64,8 @@ Route::post('/administrator/{tokens}', 'AuthController@validateadministrator');
 Route::get('administrator', 'LoginController@administrator');
 
 // Auth Manual Controller
-Route::post('/create-account/{tokens}', 'LoginController@create_account');
+// Route::post('create-account/', 'LoginController@create_account');
+Route::post('/createaccount', 'LoginController@create_account');
 Route::post('/reset-account', 'LoginController@resetAccount');
 Route::get('/verification-user/{enc_id}/{tokens}', 'LoginController@verification');
 Route::get('/reset-account/{enc_id}/{tokens}', 'LoginController@getAcc');

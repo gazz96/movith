@@ -29,7 +29,6 @@ class LoginController extends Controller
             'email' => 'required|unique:users|email',
             'phone' => 'required|unique:users|numeric|min:11',
         ]);
-        $name = $request->name;
         $places = new placesDB;
         $places->nama = $request->name;
         $places->username = $request->username;
@@ -45,7 +44,7 @@ class LoginController extends Controller
         $places->updated_by = $request->ip();
         $places->save();
         // dd($places);
-        return view('homepage.berhasil', ['name' => $name]);
+        return view('homepage.berhasil');
     }
 
     public function administrator()
