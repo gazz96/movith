@@ -26,7 +26,7 @@ us.')
                     </div>
                     @endforeach
                     @endif
-                    <form class="form-transparent-grey" action="createaccount/" method="POST">
+                    <form class="form-transparent-grey" action="/createaccount" method="POST">
                         @csrf
                         <div class="row">
                             <div class="col-lg-12">
