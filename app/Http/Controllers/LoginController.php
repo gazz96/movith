@@ -29,6 +29,7 @@ class LoginController extends Controller
             'email' => 'required|unique:users|email',
             'phone' => 'required|unique:users|numeric|min:11',
         ]);
+        $name = $request->name;
         $places = new placesDB;
         $places->nama = $request->name;
         $places->username = $request->username;

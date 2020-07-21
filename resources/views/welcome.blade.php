@@ -60,7 +60,7 @@
                             </li>
                             <?php else: ?>
                             <li>
-                                <a class="btn btn-danger" href="sign-in"><i class="icon-user"></i> Sign In</a>
+                                <a class="btn btn-danger" href="/sign-in"><i class="icon-user"></i> Sign In</a>
                             </li>
                             <?php endif; ?>
                         </ul>
