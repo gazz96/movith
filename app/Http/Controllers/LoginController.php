@@ -37,7 +37,7 @@ class LoginController extends Controller
         $places->password = Hash::make($request->password);
         $places->email = $request->email;
         $places->nohp = $request->phone;
-
+        $places->status = 'unactived';
         $places->places_type = $request->place;
         $places->nama_toko = $request->placename;
         $places->alamat_toko = $request->alamat_toko;

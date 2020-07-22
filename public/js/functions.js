@@ -2880,7 +2880,7 @@ $(function () {
             //         <source src='${src[index]}' type='video/mp4'></source>
             //     </video>
             //     `
-            // );
+        // );
             console.log(videoEl.find('source'));
             videoEl.find('video').attr('src', src[index]);
             let videoChild = videoEl.find('video');

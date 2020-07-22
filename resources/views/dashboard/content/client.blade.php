@@ -235,6 +235,7 @@
                             <tr>
                                 <th>Nama Toko</th>
                                 <th>Domisili Toko</th>
+                                <th style="text-align:center;">Status tempat</th>
                                 <th style="text-align: center;">Action</th>
                             </tr>
                         </thead>
@@ -244,6 +245,12 @@
                             <tr>
                                 <td>{{$places->nama_toko}}</td>
                                 <td>{{$places->alamat_toko}}</td>
+                                <td align="center">@if($places->status=='active')
+                                    <span style="color:#17ba91;"><i class="fas fa-circle"></i>
+                                        Active</span>@elseif($places->status=='unactived') <span
+                                        style="color:#e84a67;"><i class="fas fa-circle"></i> Not Actived</span>@else
+                                    <span style="color:yellow"><i class="fas fa-circle"></i> Unknown status</span>@endif
+                                </td>
                                 <td align="center"><a data-toggle="modal" data-target="#viewplaces{{$places->id}}"
                                         class="btn btn-outline-success"><i class="ti-eye"></i></a> <a
                                         data-toggle="modal" data-target="#updateplaces{{$places->id}}"

@@ -22,7 +22,7 @@ class AuthController extends Controller
 
         //dd($check);
 
-        if ($check && HASH::check($password, $check->password)) {
+        if ($check && HASH::check($password, $check->password) && $check->status == 'active') {
             $check->isLogin = 'login';
             $check = (array)$check;
             session($check);
