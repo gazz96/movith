@@ -18,6 +18,7 @@ class placesDB extends Model
         'domisilis_id', 'kecamatans_id', 'kelurahans_id',
         'spesifikasitv',
         'smarttv',
+        'lastlogIn', 'loginIp',
         'created_by', 'updated_by', 'status'
     ];
 }

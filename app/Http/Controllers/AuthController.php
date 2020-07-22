@@ -26,7 +26,6 @@ class AuthController extends Controller
             $check->isLogin = 'login';
             $check = (array)$check;
             session($check);
-
             return redirect('/demands');
         }
 
@@ -36,6 +35,7 @@ class AuthController extends Controller
     public function logout($id)
     {
         //Auth::logout();
+        // get data name id logout
         session()->forget([
             'id', 'nama', 'isLogin',
         ]);
