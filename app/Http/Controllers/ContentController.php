@@ -78,7 +78,6 @@ class ContentController extends Controller
 
 
         //dd($request->input('id_ads'));
-
         $generate_password = str_random(6);
         $places = new placesDB;
         $places->nama = $request->name;
@@ -210,11 +209,6 @@ class ContentController extends Controller
     }
     public function adsvideoadd(Request $request)
     {
-        $this->validate($request, [
-            'coverimg' => 'required|required|image|mimes:jpeg,png,jpg,gif,svg|max:5048',
-            'fileads' =>
-            'required|mimes:mp4,ogx,oga,ogv,ogg,webm',
-        ]);
         $ads = new adsDB();
         $ads->judul_ads = $request->judul_ads;
         $ads->desc_ads = $request->desc_ads;
