@@ -45,7 +45,12 @@
                             <source src="media/fileads/Sarjanamalam/imediaproperti.mp4" type="video/mp4"> --}}
                         </video> -->
 
-                        <div id="vid" class="" data-src="<?php echo implode(',', $tempVideo); ?>"></div>
+                        <div id="vid" class="" data-src="<?php echo implode(',', $tempVideo); ?>">
+                            <video controls autoplay>
+                                <!-- <source src="" type='video/mp4'></source> -->
+                            </video>
+                        </div>
+                        <button class="btn d-none" id="js-trigger-fs">test</button>
                         <?php endif ?>
                     </div>
 

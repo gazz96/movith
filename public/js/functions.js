@@ -2827,26 +2827,58 @@ $(function(){
     //     autoplay: true,
     //     preload: 'auto'
     // });
+
+    let isFullscreen = false;
+
+    $('#vid').on('webkitfullscreenchange mozfullscreenchange fullscreenchange', function(){
+        isFullscreen = document.webkitFullscreenElement !== null;
+        console.log(isFullscreen);
+    })
+
+    $(document).on('click', '#js-trigger-fs', function(){
+        openFullscreen();
+    })
+
+    function openFullscreen()
+    {
+        let elem = document.querySelector('#vid');
+        console.log('open fullscreen');
+        if (elem.requestFullscreen) {
+            console.log('1')
+          elem.requestFullscreen();
+        } else if (elem.mozRequestFullScreen) { /* Firefox */
+          elem.mozRequestFullScreen();
+        } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+          elem.webkitRequestFullscreen();
+        } else if (elem.msRequestFullscreen) { /* IE/Edge */
+          elem.msRequestFullscreen();
+        }
+      }
+
     loadPlayer($('#vid'), 0);
     function loadPlayer(videoEl, index = 0) {;
         let src = videoEl.data('src').split(',');
 
         if(src.length > 0 && index < src.length) {
-
-            videoEl.html(`
-                <video controls autoplay>
-                    <source src='${src[index]}' type='video/mp4'></source>
-                </video>`
-            );
+            // videoEl.html(`
+            //     <video controls autoplay>
+            //         <source src='${src[index]}' type='video/mp4'></source>
+            //     </video>
+            //     `
+            // );
+            console.log(videoEl.find('source'));
+            videoEl.find('video').attr('src', src[index]);
             let videoChild = videoEl.find('video');
 
             console.log('triggering');
             videoChild.on('ended', function(){
                 loadPlayer(videoEl, ++index);
+                if(isFullscreen) $('#js-trigger-fs').trigger('click');
             })
 
         } else {
             loadPlayer(videoEl, 0);
+            if(isFullscreen) $('#js-trigger-fs').trigger('click');
         }
 
 
