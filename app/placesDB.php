@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class placesDB extends Model
 {
+    // Tes bang gas
     protected $table = 'places';
     protected $fillable = [
         'nama',
