@@ -10,11 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-// -_- -_- -_- -_- -_- -_-
-// Susah juga yeee
-// bisa ga?
-// another comments
-// another another comments
+// tes
+// test juga
 
 use Illuminate\Support\Facades\Hash;
 
@@ -49,6 +46,14 @@ Route::get('partners', function () {
 Route::get('investor-relations', function () {
     return view('homepage.investor');
 });
+
+Route::get('logout', function () {
+    session()->flush();
+    return redirect('/');
+});
+Route::get('/berhasil', function () {
+    return view('homepage.berhasil');
+})->name('congrats');
 // Halaman Authorizations
 // halaman menuju demands
 Route::get('sign-in', 'LoginController@signin')->name('signin');
@@ -59,7 +64,8 @@ Route::post('/administrator/{tokens}', 'AuthController@validateadministrator');
 Route::get('administrator', 'LoginController@administrator');
 
 // Auth Manual Controller
-Route::post('/create-account/{tokens}', 'LoginController@create_account');
+// Route::post('create-account/', 'LoginController@create_account');
+Route::post('/createaccount', 'LoginController@create_account');
 Route::post('/reset-account', 'LoginController@resetAccount');
 Route::get('/verification-user/{enc_id}/{tokens}', 'LoginController@verification');
 Route::get('/reset-account/{enc_id}/{tokens}', 'LoginController@getAcc');
@@ -68,10 +74,9 @@ Route::post('/get-verification/{tokens}', 'AuthController@validateLogin');
 // On Demands
 
 Route::group(['middleware' => ['islogin']], function () {
-
-
     Route::get('/demands', 'DemandsController@index');
 });
+
 Route::group(['middleware' => ['isadmin']], function () {
     Route::get('dash', function () {
         return view('dashboard.content.index');

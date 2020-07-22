@@ -24,7 +24,7 @@ class DemandsController extends Controller
         $lowm = new LaravelOWM();
 
         $ads = DB::table('places_video')
-            ->join('ads', 'places_video.id_ads','=', 'ads.id')
+            ->join('ads', 'places_video.id_ads', '=', 'ads.id')
             ->orderBy('ads.created_at', 'ASC')
             ->select('ads.*')
             ->where('id_place', session()->get('id'))

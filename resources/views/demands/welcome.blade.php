@@ -12,13 +12,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <title>Movith - @yield('title')</title>
-    <link href="css/plugins.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/custom.css" rel="stylesheet">
+    <link href="{!!asset('css/style.css')!!}" rel="stylesheet">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link href="{!!asset('css/plugins.css')!!}" rel="stylesheet">
+    <link href="{!!asset('css/custom.css')!!}" rel="stylesheet">
 
     <link rel="stylesheet" href="https://vjs.zencdn.net/7.8.3/video-js.css">
-    <script src="https://vjs.zencdn.net/7.8.3/video.js"></script>
- 
+    <script src="https://vjs.zencdn.net/7.8.3/video.js')}}"></script>
+
 </head>
 <script>
     function startTime() {
@@ -76,7 +77,7 @@
                                         </li>
                                     </ul>
                                     <ul>
-                                        <li class="dropdown"> <a href="#">{{session()->get('nama')}}<span
+                                        <li class="dropdown"> <a href="#">{{session()->get('nama_toko')}}<span
                                                     class="menu-sub-title"><span style="color:#17ba91;"><i
                                                             class="fas fa-circle"></i></span>
                                                     Online</span></a>
@@ -96,10 +97,9 @@
             @yield('content')
         </div>
 
-        <script src=" js/jquery.js"> </script>
-        <script src="js/plugins.js"></script>
-
-        <script src="js/functions.js"></script>
+        <script src="{!!asset('js/jquery.js')!!}"> </script>
+        <script src="{!!asset('js/plugins.js')!!}"></script>
+        <script src="{!!asset('js/functions.js')!!}"></script>
 </body>
 
 </html>

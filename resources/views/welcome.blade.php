@@ -12,12 +12,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <title>Movith - @yield('title')</title>
-    <link href="css/plugins.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/custom.css" rel="stylesheet">
+    <link href="{!!asset('css/plugins.css')!!}" rel="stylesheet">
+    <link href="{!!asset('css/style.css')!!}" rel="stylesheet">
+    <link href="{!!asset('css/custom.css')!!}" rel="stylesheet">
+    <meta name="csrf_token" content="{{csrf_token()}}">
 </head>
 
 <body>
+
     <div class="body-inner">
         <header id="header" data-fullwidth="true" class="header-mini dark header-always-fixed">
             <div class="header-inner">
@@ -44,22 +46,23 @@
 
                     <div class="header-extras">
                         <ul>
+                            <?php if(session()->get('isLogin') == 'login') : ?>
                             <li>
-                                <a class="btn btn-danger" href="sign-in"><i class="icon-user"></i> SIGN IN</a>
-                            </li>
-                            {{-- <li>
                                 <div class="p-dropdown">
-                                    <a href="#"><i class="icon-globe"></i><span>EN</span></a>
+                                    <a class="btn btn-danger" href="javascript:void(0)"><i class="icon-user"></i>
+                                        <?php echo session()->get('nama_toko'); ?></a>
                                     <ul class="p-dropdown-content">
-                                        <li><a href="#">French</a></li>
-                                        <li><a href="#">Spanish</a></li>
-                                        <li><a href="#">English</a></li>
+                                        <li><a href="#">Setting</a></li>
+                                        <li><a href="demands">Demands</a></li>
+                                        <li><a href="logout">Logout</a></li>
                                     </ul>
                                 </div>
                             </li>
+                            <?php else: ?>
                             <li>
-                                <a href="#"><i class="icon-user"></i></a>
-                            </li> --}}
+                                <a class="btn btn-danger" href="/sign-in"><i class="icon-user"></i> Sign In</a>
+                            </li>
+                            <?php endif; ?>
                         </ul>
                     </div>
 
@@ -170,10 +173,9 @@
             </div>
         </div>
     </footer>
-    <script src="js/jquery.js"></script>
-    <script src="js/plugins.js"></script>
-
-    <script src="js/functions.js"></script>
+    <script src="{!!asset('js/jquery.js')!!}"></script>
+    <script src="{!!asset('js/plugins.js')!!}"></script>
+    <script src="{!!asset('js/functions.js')!!}"></script>
 </body>
 
 </html>

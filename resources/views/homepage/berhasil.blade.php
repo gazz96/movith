@@ -1,8 +1,8 @@
 @extends('welcome')
 @section('title','Successfull registered!')
 @section('description','Thanks for successfully sign up your account')
-<?php $tokens=bin2hex(openssl_random_pseudo_bytes(64));?>
 @section('content')
+<?php $tokens=bin2hex(openssl_random_pseudo_bytes(64)); ?>
 <section class="fullscreen" style="background-image:
     url(https://res.cloudinary.com/sarjanamalam/image/upload/v1586943903/movith/example/background-login-register_lfydul.jpg);
     padding-top:
@@ -17,7 +17,7 @@
                             <img class="img-congrats"
                                 src="https://res.cloudinary.com/sarjanamalam/image/upload/v1588931394/movith/example/congrats_qzevyt.svg"
                                 alt="">
-                            <h3>Thank you {{$name}} for signing up!</h3>
+                            <h3>Thank you for signing up!</h3>
                             <p>Terima kasih karna sudah mendaftarkan dirimu ke akun Movith.id. Kami akan
                                 memverifikasikan akun kamu setelah kami mendapatkan informasi akurat dan terverifikasi
                                 oleh tim kami. Kami akan meng-informasikan nya segera mungkin.</p>

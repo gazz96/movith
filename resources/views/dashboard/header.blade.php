@@ -116,7 +116,7 @@
                         </li>
                         <li>
                             <?php $tokens =  bin2hex(openssl_random_pseudo_bytes(64));?>
-                            <a href="/logout/{{session()->get('id')}}/{{$tokens}}"><span><i class="ti-power-off"></i>
+                            <a href="logout"><span><i class="ti-power-off"></i>
                                     Logout</span></a>
                         </li>
                     </ul>

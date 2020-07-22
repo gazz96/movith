@@ -13,16 +13,6 @@ class AuthController extends Controller
     public function validateLogin(Request $request)
     {
         $tokens = str_random(50);
-        // if (Auth::attempt([
-        //     'username' => $request->username,
-        //     'password' => $request->password,
-        //     'status' => 'active',
-        // ])) {
-        //     return redirect('/dash');
-        // }
-        // return back()->with('gagal', 'Otorisasi keanggotaan gagal atau silahkan cek kembali username atau password anda.');
-
-
         $username = $request->username;
         $password = $request->password;
 
@@ -30,11 +20,9 @@ class AuthController extends Controller
             ->where('username', $username)
             ->first();
 
-
-
         //dd($check);
 
-        if($check && HASH::check($password, $check->password)) {
+        if ($check && HASH::check($password, $check->password)) {
             $check->isLogin = 'login';
             $check = (array)$check;
             session($check);
@@ -44,8 +32,6 @@ class AuthController extends Controller
 
 
         return back()->with('gagal', 'Otorisasi keanggotaan gagal atau silahkan cek kembali username atau password anda.');
-
-
     }
     public function logout($id)
     {
@@ -55,7 +41,8 @@ class AuthController extends Controller
         ]);
         return redirect('/');
     }
-    public function validateadministrator(Request $request){
+    public function validateadministrator(Request $request)
+    {
         $tokens = str_random(50);
         // if (Auth::attempt([
         //     'username' => $request->username,
@@ -74,11 +61,9 @@ class AuthController extends Controller
             ->where('username', $username)
             ->first();
 
-
-
         //dd($check);
 
-        if($check && HASH::check($password, $check->password)) {
+        if ($check && HASH::check($password, $check->password)) {
             $check->isLogin = 'admin';
             $check = (array)$check;
             session($check);

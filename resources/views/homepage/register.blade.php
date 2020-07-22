@@ -26,18 +26,18 @@ us.')
                     </div>
                     @endforeach
                     @endif
-                    <form class="form-transparent-grey" action="/create-account/{{$tokens}}" method="POST">
-                        {{ csrf_field() }}
+                    <form class="form-transparent-grey" action="/createaccount" method="POST">
+                        @csrf
                         <div class="row">
                             <div class="col-lg-12">
-                                <h3>Register New Account</h3>
+                                <h3>Register Your Places Account</h3>
                                 <p>Create an account by entering the information below. </p>
                             </div>
                             <div class="col-lg-12">
                                 <h3>Informasi Umum</h3>
                             </div>
                             <div class="col-lg-6 form-group">
-                                <label class="sr-only">Nama Lengkap</label>
+                                <label class="sr-only">Nama Penanggung Jawab</label>
                                 <input type="text" name="name" placeholder="First Name" class="form-control" required>
                             </div>
                             <div class="col-lg-6 form-group">
@@ -79,9 +79,9 @@ us.')
                                     placeholder="Nama Toko/Cafe/Rumah makan/Restoran" class="form-control" required>
                             </div>
                             <div class="col-lg-12 form-group">
-                                <label class="sr-only">Kota</label>
-                                <input type="text" name="city" value="" placeholder="Kota Domisili" class="form-control"
-                                    required>
+                                <label class="sr-only">Alamat Tempat</label>
+                                <input type="text" name="alamat_toko" value="" placeholder="Alamat lengkap tempat/toko"
+                                    class="form-control" required>
                             </div>
                             <div class="col-lg-12 form-group">
                                 <button class="btn" type="submit">Register New Account </button>

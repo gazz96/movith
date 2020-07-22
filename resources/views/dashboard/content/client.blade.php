@@ -262,7 +262,7 @@
                                             <button type="button" class="close" data-dismiss="modal"
                                                 aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                         </div>
-                                        <div class="modal-body">
+                                        <div class="modal-body inform">
                                             <h4>Informasi Penanggung Jawab</h4>
                                             <p>
                                                 Nama: {{$places->nama}} <br>
@@ -282,6 +282,11 @@
                                                 Dibuat tanggal: {{$places->created_at}} <br>
                                                 Dibuat oleh user: {{$places->created_by}} <br>
                                                 Terakhir ubah data: {{$places->updated_at}} <br>
+                                            </p>
+                                            <h4>Informasi Rahasia</h4>
+                                            <p>
+                                                Informasi username: {{$places->username}} <br>
+                                                Informasi password: {{$places->unpassword}}
                                             </p>
                                         </div>
                                         <div class="modal-footer"><button type="button"
@@ -334,6 +339,36 @@
                                                         </div>
                                                     </div>
                                                     <hr>
+                                                    <h4>Informasi Rahasia</h4>
+                                                    <div class="form-row">
+                                                        <div class="col-md-12">
+                                                            <div class="form-group">
+                                                                <label for="">Username</label>
+                                                                <input type="text" name="username"
+                                                                    value="{{$places->username}}" id=""
+                                                                    class="form-control" required>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-row">
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label for="">Password</label>
+                                                                <input type="password" name="password"
+                                                                    value="{{$places->unpassword}}" id="password"
+                                                                    class="form-control" required pattern=".{8,}">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label for="">Verifikasi Password</label>
+                                                                <input type="password" name="verpassword"
+                                                                    id="verpassword" value="" class="form-control"
+                                                                    required pattern=".{8,}">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <hr>
                                                     <h4>Informasi Toko</h4>
                                                     <div class="form-row">
                                                         <div class="col-md-6">
@@ -377,7 +412,7 @@
 
                                                     <div class="form-row">
                                                         <div class="col-md-6">
-                                                            <h3>Tambah Video</h3>
+                                                            <h4>Tambah Video</h4>
 
 
                                                             <?php
@@ -394,13 +429,17 @@
 
 
                                                             ?>
-                                                            <input type="hidden" name="selectedIds" value="<?php echo implode(',', $tempSelectedIds) ?>">
-                                                            <select class="form-control js-id_ads" name="id_ads[]" multiple>
+                                                            <input type="hidden" name="selectedIds"
+                                                                value="<?php echo implode(',', $tempSelectedIds) ?>">
+                                                            <select class="form-control js-id_ads" name="id_ads[]"
+                                                                multiple>
                                                                 <option value="">Pilih</option>
 
 
                                                                 @foreach ($ads as $ad)
-                                                                <option value="{{$ad->id}}" <?php if(in_array($ad->id, $tempSelectedIds)) echo 'selected'; ?>>{{$ad->judul_ads}}</option>
+                                                                <option value="{{$ad->id}}"
+                                                                    <?php if(in_array($ad->id, $tempSelectedIds)) echo 'selected'; ?>>
+                                                                    {{$ad->judul_ads}}</option>
                                                                 @endforeach
                                                             </select>
                                                         </div>
@@ -601,4 +640,5 @@
     </div>
 </div>
 {{-- End add places modal --}}
+
 @endsection

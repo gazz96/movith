@@ -4,7 +4,7 @@
 <?php $tokens=bin2hex(openssl_random_pseudo_bytes(64));?>
 @section('content')
 <section class="fullscreen"
-    data-bg-parallax="https://res.cloudinary.com/sarjanamalam/image/upload/v1586943903/movith/example/background-login-register_lfydul.jpg"
+    data-bg-parallax="https://res.cloudinary.com/sarjanamalam/image/upload/v1595043193/movith/example/postersecret_alv9zh.jpg"
     style="padding-top:20px;">
     <div class="container">
         <div>
@@ -44,8 +44,6 @@
                             <button type="submit" class="btn">Login</button>
                         </div>
                     </form>
-                    <p class="small">Don't have an account yet? <a href="sign-up">Register New Account</a>
-                    </p>
                 </div>
             </div>
         </div>

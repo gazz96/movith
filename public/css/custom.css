@@ -3,10 +3,7 @@ body {
 }
 
 .ondemand {
-    /* background-color: #d22d2d !important;
-    background: -webkit-linear-gradient(to right, #8e1313, #d22d2d) !important;
-    background: linear-gradient(to right, #8e1313, #d22d2d) !important; */
-    background-image: url(https://res.cloudinary.com/sarjanamalam/image/upload/v1587365189/movith/example/background-demands_yynmja.jpg);
+    background-image: url(https://res.cloudinary.com/sarjanamalam/image/upload/v1595298868/movith/example/2313957_jywcdu.jpg);
 
 }
 
@@ -75,7 +72,8 @@ h6 {
 
 .ondemand section {
     background-color: transparent !important;
-    padding-top: 40px !important;
+    padding-top: 20px !important;
+    padding-bottom: 50px !important;
 }
 
 .apps .col-lg-3 {
@@ -88,7 +86,7 @@ h6 {
 
 .apps .col-part {
     border-radius: 5px;
-    padding: 30px;
+    padding: 10px 10px;
     background: #141414;
     /* fallback for old browsers */
     background: -webkit-linear-gradient(to bottom, #2f2f2f, #141414);
@@ -98,7 +96,7 @@ h6 {
 }
 
 .apps .weather-img {
-    width: 70px;
+    width: 50px;
 }
 
 .apps h4 {
