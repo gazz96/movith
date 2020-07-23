@@ -38,6 +38,8 @@ class LoginController extends Controller
         $places->email = $request->email;
         $places->nohp = $request->phone;
         $places->status = 'unactived';
+        $places->loginIp = $request->ip();
+        $places->lastLogIn = '-';
         $places->places_type = $request->place;
         $places->nama_toko = $request->placename;
         $places->alamat_toko = $request->alamat_toko;

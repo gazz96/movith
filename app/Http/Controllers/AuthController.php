@@ -24,9 +24,6 @@ class AuthController extends Controller
 
         if ($check && HASH::check($password, $check->password) && $check->status == 'active') {
             $check->isLogin = 'login';
-            $check->lastlogIn = new \DateTime('NOW');
-            $check->loginIp = $request->ip();
-            $check->save();
             $check = (array)$check;
             session($check);
             return redirect('/demands');

@@ -363,7 +363,10 @@
                                                                 <label for="">Password</label>
                                                                 <input type="password" name="password"
                                                                     value="{{$places->unpassword}}" id="password"
-                                                                    class="form-control" required pattern=".{8,}">
+                                                                    class="form-control" required pattern=".{8,}"
+                                                                    oninvalid="setCustomValidity('Minimal character
+                                                                    password adalah 8 abjad/angka. ')"
+                                                                    onchange="try{setCustomValidity('')}catch(e){}">
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
@@ -371,7 +374,9 @@
                                                                 <label for="">Verifikasi Password</label>
                                                                 <input type="password" name="verpassword"
                                                                     id="verpassword" value="" class="form-control"
-                                                                    required pattern=".{8,}">
+                                                                    required pattern=".{8,}" oninvalid="setCustomValidity('Minimal character
+                                                                    password adalah 8 abjad/angka. ')"
+                                                                    onchange="try{setCustomValidity('')}catch(e){}">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -404,6 +409,26 @@
                                                                     <option value="Smart TV">Smart TV</option>
                                                                     <option value="Bukan Smart TV">Bukan Smart TV
                                                                     </option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label for="">Status tempat
+                                                                    @if($places->status=='active')
+                                                                    <span style="color:#17ba91;"><i
+                                                                            class="fas fa-circle"></i>
+                                                                        Active</span>@elseif($places->status=='unactived')
+                                                                    <span style="color:#e84a67;"><i
+                                                                            class="fas fa-circle"></i> Not
+                                                                        Actived</span>@else
+                                                                    <span style="color:yellow"><i
+                                                                            class="fas fa-circle"></i> Unknown
+                                                                        status</span>@endif</label>
+                                                                <select name="status" id=""
+                                                                    class="form-control custom-select">
+                                                                    <option value="active">Aktif</option>
+                                                                    <option value="unactived">Non aktifkan</option>
                                                                 </select>
                                                             </div>
                                                         </div>

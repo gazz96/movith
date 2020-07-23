@@ -58,7 +58,9 @@ us.')
                             <div class="col-lg-12 form-group">
                                 <label class="sr-only">Password</label>
                                 <input type="password" value="" placeholder="Password" name="password"
-                                    class="form-control" required>
+                                    class="form-control" required pattern=".{8,}"
+                                    oninvalid="setCustomValidity('Minimal character password adalah 8 abjad/angka. ')"
+                                    onchange="try{setCustomValidity('')}catch(e){}">
                             </div>
                             <div class="col-lg-12">
                                 <h3>Informasi Tambahan</h3>

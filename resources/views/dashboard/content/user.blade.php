@@ -62,9 +62,10 @@
                             <tr>
                                 <td>{{$user->name}}</td>
                                 <td>{{$user->username}}</td>
-                                <td align="center">@if($user->status=='active') <span style="color:green;"><i
-                                            class="fas fa-circle"></i></span> Aktif @else <span style="color:red;"><i
-                                            class="fas fa-circle"></i></span> Tidak Aktif @endif</td>
+                                <td align="center">@if($user->status=='active') <span style="color:#17ba91;"><i
+                                            class="fas fa-circle"></i></span> Aktif @else <span
+                                        style="color:#e84a67;"><i class="fas fa-circle"></i></span> Tidak Aktif @endif
+                                </td>
                                 <td align="center"><a data-toggle="modal" data-target="#view{{$user->id}}"
                                         class="btn btn-outline-success"><i class="ti-eye"></i></a> <a
                                         data-toggle="modal" data-target="#update{{$user->id}}"
@@ -164,7 +165,15 @@
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label>Status</label>
+                                                        <label>Status @if($user->status=='active')
+                                                            <span style="color:#17ba91;"><i class="fas fa-circle"></i>
+                                                                Active</span>@elseif($user->status=='unactived')
+                                                            <span style="color:#e84a67;"><i class="fas fa-circle"></i>
+                                                                Not
+                                                                Actived</span>@else
+                                                            <span style="color:yellow"><i class="fas fa-circle"></i>
+                                                                Unknown
+                                                                status</span>@endif</label>
                                                         <select name="status" class="form-control custom-select">
                                                             <option value="active">Aktifkan!</option>
                                                             <option value="unactived">Non Aktifkan!</option>

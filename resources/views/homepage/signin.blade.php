@@ -27,11 +27,15 @@
                         {{ csrf_field() }}
                         <div class="form-group">
                             <label class="sr-only">Username</label>
-                            <input type="text" name="username" class="form-control" placeholder="Username" autofocus>
+                            <input type="text" name="username" class="form-control" placeholder="Username" autofocus
+                                required>
                         </div>
                         <div class="form-group m-b-5">
                             <label class="sr-only">Password</label>
-                            <input type="password" name="password" class="form-control" placeholder="Password">
+                            <input type="password" name="password" class="form-control" placeholder="Password" required
+                                pattern=".{8,}"
+                                oninvalid="setCustomValidity('Minimal character password adalah 8 abjad/angka. ')"
+                                onchange="try{setCustomValidity('')}catch(e){}">
                         </div>
                         <div class="form-group form-inline text-left">
                             <div class="form-check">

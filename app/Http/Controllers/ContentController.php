@@ -39,8 +39,8 @@ class ContentController extends Controller
         $client->username = $request->username;
         $client->password = Hash::make($generate_password);
         $client->unpassword = $generate_password;
-        $client->updated_by = auth()->user()->name;
-        $client->created_by = auth()->user()->name;
+        $client->updated_by = session()->get('name');
+        $client->created_by = session()->get('name');
         $client->save();
         return back()->with('selesai', 'Tambah data client berhasil ditambah.');
     }
@@ -54,7 +54,7 @@ class ContentController extends Controller
         $client->deskripsi = $request->deskripsi;
         $client->namausaha = $request->namausaha;
         $client->username = $request->username;
-        $client->updated_by = auth()->user()->name;
+        $client->updated_by = session()->get('name');
         $client->save();
         return back()->with('selesai', 'Update data client berhasil diubah.');
     }
@@ -85,10 +85,12 @@ class ContentController extends Controller
         $places->alamat_toko = $request->alamat_toko;
         $places->email = $request->email;
         $places->nohp = $request->nohp;
+        $places->loginIp = $request->ip();
+        $places->lastLogIn = '-';
         $places->spesifikasitv = $request->spesifikasi;
         $places->smarttv = $request->smarttv;
-        $places->updated_by = auth()->user()->name;
-        $places->created_by = auth()->user()->name;
+        $places->updated_by = session()->get('name');
+        $places->created_by = session()->get('name');
         $places->save();
         $lastInsertId = $places->id;
 
@@ -112,6 +114,7 @@ class ContentController extends Controller
         $places->username = $request->username;
         $places->password = Hash::make($request->password);
         $places->unpassword = $request->password;
+        $places->status = $request->status;
         $places->nohp = $request->nohp;
         $places->spesifikasitv = $request->spesifikasi;
         $places->smarttv = $request->smarttv;
@@ -259,8 +262,8 @@ class ContentController extends Controller
         $box = new boxofficeDB();
         $box->judul = $request->judul;
         $box->tahun_film = $request->tahun_film;
-        $box->created_by = auth()->user()->name;
-        $box->updated_by = auth()->user()->name;
+        $box->created_by = session()->get('name');
+        $box->updated_by = session()->get('name');
         $box->kategori_utama = $request->kategori_utama;
         $box->sub_kategori = $request->sub_kategori;
         $box->sub_kategori2 = $request->sub_kategori2;
