@@ -227,7 +227,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="ti-email"></i></span>
                             </div>
-                            <input type="email" class="form-control" placeholder="Your Email" name="email">
+                            <input type="email" class="form-control" placeholder="Your Email" name="email" required>
                         </div>
                     </div>
                     <div class="form-group">
@@ -235,7 +235,8 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="ti-user"></i></span>
                             </div>
-                            <input type="text" class="form-control" placeholder="Your Username" name="username">
+                            <input type="text" class="form-control" placeholder="Your Username" name="username"
+                                required>
                         </div>
                     </div>
                     <div class="form-group">
@@ -243,12 +244,12 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="ti-tablet"></i></span>
                             </div>
-                            <input type="text" class="form-control" placeholder="Nomor Kontak" name="phone">
+                            <input type="text" class="form-control" placeholder="Nomor Kontak" name="phone" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="">Kota Domisili</label>
-                        <select name="city" class="form-control custom-select">
+                        <select name="city" class="form-control custom-select" required>
                             <option value="Medan">Medan</option>
                             <option value="Jakarta">Jakarta</option>
                             <option value="Bandung">Bandung</option>
