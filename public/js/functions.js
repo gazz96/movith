@@ -2869,26 +2869,28 @@ $(function () {
     }
 
     let videoEl = $('#vid');
+    let videoChild = videoEl.find('video');
+
     loadPlayer(0);
 
     function loadPlayer(index = 0) {
-
         let src = videoEl.data('src').split(',');
-        let videoChild = videoEl.find('video');
-
-        videoChild.off('ended', function(){
-            loadPlayer(++index);
-            if (isFullscreen) $('#js-trigger-fs').trigger('click');
-        })
 
         if (src.length > 0 && index < src.length) {
-
+            // videoEl.html(`
+            //     <video controls autoplay>
+            //         <source src='${src[index]}' type='video/mp4'></source>
+            //     </video>
+            //     `
+        // );
             console.log(videoEl.find('source'));
-            videoEl.find('video').attr('src', src[index]);
-
-            console.log('triggering');
-
+            videoChild.attr('src', src[index]);
             videoChild.on('ended', function () {
+
+                videoChild.get(0).pause();
+                videoChild.removeAttr('src');
+                videoChild.get(0).load();
+
                 loadPlayer(++index);
                 if (isFullscreen) $('#js-trigger-fs').trigger('click');
             })
