@@ -2872,20 +2872,22 @@ $(function () {
     loadPlayer(0);
 
     function loadPlayer(index = 0) {
+
         let src = videoEl.data('src').split(',');
+        let videoChild = videoEl.find('video');
+
+        videoChild.off('ended', function(){
+            loadPlayer(++index);
+            if (isFullscreen) $('#js-trigger-fs').trigger('click');
+        })
 
         if (src.length > 0 && index < src.length) {
-            // videoEl.html(`
-            //     <video controls autoplay>
-            //         <source src='${src[index]}' type='video/mp4'></source>
-            //     </video>
-            //     `
-        // );
+
             console.log(videoEl.find('source'));
             videoEl.find('video').attr('src', src[index]);
-            let videoChild = videoEl.find('video');
 
             console.log('triggering');
+
             videoChild.on('ended', function () {
                 loadPlayer(++index);
                 if (isFullscreen) $('#js-trigger-fs').trigger('click');
