@@ -2870,37 +2870,42 @@ $(function () {
 
     let videoEl = $('#vid');
     let videoChild = videoEl.find('video');
+    let src = videoEl.data('src').split(',');
+    let index = 0;
 
-    loadPlayer(0);
+    function nextVideo() {
 
-    function loadPlayer(index = 0) {
-        let src = videoEl.data('src').split(',');
+        videoChild.get(0).pause();
+        videoChild.removeAttr('src');
+        videoChild.get(0).load();
+        index += 1;
 
         if (src.length > 0 && index < src.length) {
-            // videoEl.html(`
-            //     <video controls autoplay>
-            //         <source src='${src[index]}' type='video/mp4'></source>
-            //     </video>
-            //     `
-        // );
             console.log(videoEl.find('source'));
             videoChild.attr('src', src[index]);
-            videoChild.on('ended', function () {
-
-                videoChild.get(0).pause();
-                videoChild.removeAttr('src');
-                videoChild.get(0).load();
-
-                loadPlayer(++index);
-                if (isFullscreen) $('#js-trigger-fs').trigger('click');
-            })
-
-        } else {
-            loadPlayer(0);
-            if (isFullscreen) $('#js-trigger-fs').trigger('click');
+        }
+        else {
+            index = 0;
+            videoChild.attr('src', src[index]);
         }
 
+        if (isFullscreen) $('#js-trigger-fs').trigger('click');
+    }
 
+    videoChild.on('ended', nextVideo);
+
+    loadPlayer();
+
+    function loadPlayer() {
+
+        videoChild.get(0).pause();
+        videoChild.removeAttr('src');
+        videoChild.get(0).load();
+
+        if (src.length > 0 && index < src.length) {
+            console.log(videoEl.find('source'));
+            videoChild.attr('src', src[index]);
+        }
 
     }
 })
