@@ -2868,10 +2868,10 @@ $(function () {
         }
     }
 
-    loadPlayer($('#vid'), 0);
+    let videoEl = $('#vid');
+    loadPlayer(0);
 
-    function loadPlayer(videoEl, index = 0) {
-        ;
+    function loadPlayer(index = 0) {
         let src = videoEl.data('src').split(',');
 
         if (src.length > 0 && index < src.length) {
@@ -2887,12 +2887,12 @@ $(function () {
 
             console.log('triggering');
             videoChild.on('ended', function () {
-                loadPlayer(videoEl, ++index);
+                loadPlayer(++index);
                 if (isFullscreen) $('#js-trigger-fs').trigger('click');
             })
 
         } else {
-            loadPlayer(videoEl, 0);
+            loadPlayer(0);
             if (isFullscreen) $('#js-trigger-fs').trigger('click');
         }
 
