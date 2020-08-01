@@ -18,7 +18,7 @@
     <link href="{!!asset('css/custom.css')!!}" rel="stylesheet">
 
     <link rel="stylesheet" href="https://vjs.zencdn.net/7.8.3/video-js.css">
-    <script src="https://vjs.zencdn.net/7.8.3/video.js')}}"></script>
+    {{-- <script src="https://vjs.zencdn.net/7.8.3/video.js')}}"></script> --}}
     <style>
         html {
             overflow-y: hidden;
